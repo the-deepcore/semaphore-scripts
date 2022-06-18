@@ -1,0 +1,10 @@
+# Ignore bundler config.
+/.bundle
+
+.idea/
+*.rdb
+*.DS_store
+
+# VS Code
+**/.vscode/
+
