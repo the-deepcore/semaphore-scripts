@@ -6,8 +6,8 @@ echo "======> set -e"
 set -e
 
 
-sudo apt-get install locate
-locate postgresql.conf
+# sudo apt-get install locate
+# locate postgresql.conf
 
 
 # https://stackoverflow.com/a/63442072
