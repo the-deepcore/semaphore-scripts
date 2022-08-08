@@ -61,6 +61,7 @@ node --version
 echo "======> checkout --use-cache"
 checkout --use-cache
 echo "======> sem-service start postgres"
+sem-service stop postgres
 sem-service start postgres
 echo "======> sem-service start redis"
 sem-service start redis
