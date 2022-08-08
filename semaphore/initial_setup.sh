@@ -34,6 +34,16 @@ bundle config set path 'vendor/bundle'
 echo "======> rbenv rehash"
 rbenv rehash
 
+# We might get errors like
+#  pg_dump: WARNING:  out of shared memory
+#  HINT:  You might need to increase max_locks_per_transaction.
+#
+# NOTE: the path /var/lib/postgresql/data has been obtained using another command (see below)
+echo "======> sudo mkdir /var/lib/postgresql/data"
+sudo mkdir /var/lib/postgresql/data
+echo "======> echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf"
+echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf
+
 
 ### VERSIONS ####
 echo "======> git --version"
@@ -64,3 +74,7 @@ echo "======> set VISUAL_TESTING_ADAPTER env variables"
 VISUAL_TESTING_REGEXP="visual([ \-]{1})test"
 if [[ $LAST_GIT_COMMIT_MESSAGE =~ $VISUAL_TESTING_REGEXP ]]; then export VISUAL_TESTING_ADAPTER="percy"; fi
 echo  "VISUAL_TESTING_ADAPTER: \"$VISUAL_TESTING_ADAPTER\""
+
+# this command returns the path to the postgresql config file"
+echo "======> psql -U postgres -c 'SHOW config_file'"
+psql -U postgres -c 'SHOW config_file'
