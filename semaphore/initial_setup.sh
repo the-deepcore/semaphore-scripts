@@ -5,6 +5,11 @@
 echo "======> set -e"
 set -e
 
+
+sudo apt-get install locate
+locate postgresql.conf
+
+
 # https://stackoverflow.com/a/63442072
 # echo "======>sudo apt-get --assume-yes install ubuntu-dev-tools"
 # sudo apt-get --assume-yes install ubuntu-dev-tools
