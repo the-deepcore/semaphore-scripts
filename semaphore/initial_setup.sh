@@ -48,6 +48,7 @@ echo "======> sudo mkdir /var/lib/postgresql/data"
 sudo mkdir /var/lib/postgresql/data
 echo "======> echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf"
 echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf
+chmod 777 /var/lib/postgresql/data/postgresql.conf
 
 
 ### VERSIONS ####
