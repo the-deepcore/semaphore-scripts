@@ -62,7 +62,7 @@ echo "======> checkout --use-cache"
 checkout --use-cache
 echo "======> sem-service start postgres"
 sem-service stop postgres
-sem-service start postgres
+sem-service start postgres --max_locks_per_transaction=1024
 echo "======> sem-service start redis"
 sem-service start redis
 
