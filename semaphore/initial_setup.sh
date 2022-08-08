@@ -5,7 +5,7 @@
 echo "======> set -e"
 set -e
 
-
+sudo swapoff -a && sudo fallocate -l 4G /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
 # sudo apt-get install locate
 # locate postgresql.conf
 
@@ -69,7 +69,7 @@ echo "======> checkout --use-cache"
 checkout --use-cache
 echo "======> sem-service start postgres"
 sem-service stop postgres
-sudo -u postgres sem-service start postgres 11
+sem-service start postgres 11
 echo "======> sem-service start redis"
 sem-service start redis
 
