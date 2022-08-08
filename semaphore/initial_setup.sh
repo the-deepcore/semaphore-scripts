@@ -45,11 +45,11 @@ rbenv rehash
 #
 # NOTE: the path /var/lib/postgresql/data has been obtained using another command (see below)
 echo "======> sudo mkdir /var/lib/postgresql/data"
-sudo mkdir /var/lib/postgresql/data
+#sudo mkdir /var/lib/postgresql/data
 echo "======> echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf"
-echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf
-sudo chmod 777 /var/lib/postgresql/data/postgresql.conf
-cat /var/lib/postgresql/data/postgresql.conf
+#echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf
+#sudo chmod 777 /var/lib/postgresql/data/postgresql.conf
+cat /var/lib/postgresql/data/postgresql.conf || true
 
 
 ### VERSIONS ####
