@@ -49,7 +49,7 @@ echo "======> sudo mkdir /var/lib/postgresql/data"
 echo "======> echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf"
 #echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf
 #sudo chmod 777 /var/lib/postgresql/data/postgresql.conf
-cat /var/lib/postgresql/data/postgresql.conf || true
+#cat /var/lib/postgresql/data/postgresql.conf || true
 
 
 ### VERSIONS ####
@@ -85,7 +85,7 @@ echo  "VISUAL_TESTING_ADAPTER: \"$VISUAL_TESTING_ADAPTER\""
 
 # this command returns the path to the postgresql config file"
 echo "======> psql -U postgres -c 'SHOW config_file;'"
-psql -U postgres -c 'SHOW config_file;'
+#psql -U postgres -c 'SHOW config_file;'
 echo "======> psql -U postgres -c 'SHOW max_locks_per_transaction;'"
-psql -U postgres -c 'SHOW max_locks_per_transaction;'
+#psql -U postgres -c 'SHOW max_locks_per_transaction;'
 echo "======> psql -U postgres -c 'SHOW max_locks_per_transaction;'"
