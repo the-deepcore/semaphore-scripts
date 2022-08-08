@@ -78,3 +78,5 @@ echo  "VISUAL_TESTING_ADAPTER: \"$VISUAL_TESTING_ADAPTER\""
 # this command returns the path to the postgresql config file"
 echo "======> psql -U postgres -c 'SHOW config_file'"
 psql -U postgres -c 'SHOW config_file'
+echo "======> psql -U postgres -c 'SHOW max_locks_per_transaction'"
+psql -U postgres -c 'SHOW max_locks_per_transaction'
