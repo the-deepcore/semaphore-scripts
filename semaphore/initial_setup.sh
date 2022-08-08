@@ -69,7 +69,7 @@ echo "======> checkout --use-cache"
 checkout --use-cache
 echo "======> sem-service start postgres"
 sem-service stop postgres
-sudo sem-service start postgres 11
+sudo -u postgres sem-service start postgres 11
 echo "======> sem-service start redis"
 sem-service start redis
 
