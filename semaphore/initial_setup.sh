@@ -71,7 +71,7 @@ echo "======> sem-service start postgres"
 sem-service stop postgres
 sem-service start postgres 11
 echo "======> sem-service start redis"
-sem-service start redis
+sem-service start redis 6
 
 ### ENV VARIABLES
 echo "======> set LAST_GIT_COMMIT_MESSAGE env variables"
@@ -89,3 +89,4 @@ echo "======> psql -U postgres -c 'SHOW config_file;'"
 echo "======> psql -U postgres -c 'SHOW max_locks_per_transaction;'"
 #psql -U postgres -c 'SHOW max_locks_per_transaction;'
 echo "======> psql -U postgres -c 'SHOW max_locks_per_transaction;'"
+echo "======> psql -U postgres -c 'SET max_locks_per_transaction to 1024;'"
