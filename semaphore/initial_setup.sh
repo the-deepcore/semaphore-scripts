@@ -39,19 +39,6 @@ bundle config set path 'vendor/bundle'
 echo "======> rbenv rehash"
 rbenv rehash
 
-# We might get errors like
-#  pg_dump: WARNING:  out of shared memory
-#  HINT:  You might need to increase max_locks_per_transaction.
-#
-# NOTE: the path /var/lib/postgresql/data has been obtained using another command (see below)
-echo "======> sudo mkdir /var/lib/postgresql/data"
-#sudo mkdir /var/lib/postgresql/data
-echo "======> echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf"
-#echo 'max_locks_per_transaction = 1024' | sudo tee - a /var/lib/postgresql/data/postgresql.conf
-#sudo chmod 777 /var/lib/postgresql/data/postgresql.conf
-#cat /var/lib/postgresql/data/postgresql.conf || true
-
-
 ### VERSIONS ####
 echo "======> git --version"
 git --version
@@ -67,10 +54,9 @@ node --version
 ### CI SETUP
 echo "======> checkout --use-cache"
 checkout --use-cache
-echo "======> sem-service start postgres"
-sem-service stop postgres
+echo "======> sem-service start postgres 11"
 sem-service start postgres 11
-echo "======> sem-service start redis"
+echo "======> sem-service start redis 6"
 sem-service start redis 6
 
 ### ENV VARIABLES
@@ -82,11 +68,3 @@ echo "======> set VISUAL_TESTING_ADAPTER env variables"
 VISUAL_TESTING_REGEXP="visual([ \-]{1})test"
 if [[ $LAST_GIT_COMMIT_MESSAGE =~ $VISUAL_TESTING_REGEXP ]]; then export VISUAL_TESTING_ADAPTER="percy"; fi
 echo  "VISUAL_TESTING_ADAPTER: \"$VISUAL_TESTING_ADAPTER\""
-
-# this command returns the path to the postgresql config file"
-echo "======> psql -U postgres -c 'SHOW config_file;'"
-#psql -U postgres -c 'SHOW config_file;'
-echo "======> psql -U postgres -c 'SHOW max_locks_per_transaction;'"
-#psql -U postgres -c 'SHOW max_locks_per_transaction;'
-echo "======> psql -U postgres -c 'SHOW max_locks_per_transaction;'"
-echo "======> psql -U postgres -c 'SET max_locks_per_transaction to 1024;'"
