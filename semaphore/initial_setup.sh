@@ -22,6 +22,8 @@ echo "======> ssh-add ~/.keys/*"
 ssh-add ~/.keys/*
 
 ### INITIAL DEPENDECIES SETUP ###
+echo "======> sem-version ruby $NODE_VERSION -f"
+sem-version node $NODE_VERSION -f
 echo "======> sem-version ruby $RUBY_VERSION -f"
 sem-version ruby $RUBY_VERSION -f
 # sem-version python 2.7
