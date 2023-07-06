@@ -16,10 +16,10 @@ set -e
 ### SSH SETUP ###
 # Correct permissions since they are too open by default
 #echo "======> chmod 0600 ~/.keys/*"
-#chmod 0600 ~/.keys/*
+[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && chmod 0600 ~/.keys/*
 # Add the key to the ssh agent:
 #echo "======> ssh-add ~/.keys/*"
-#ssh-add ~/.keys/*
+[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && ssh-add ~/.keys/*
 
 ### INITIAL DEPENDECIES SETUP ###
 echo "======> sem-version ruby $NODE_VERSION -f"
