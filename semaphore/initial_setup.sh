@@ -23,9 +23,6 @@ chmod 0600 ~/.ssh/id_botyglot_*
 echo "======> ssh-add ~/.ssh/id_botyglot_*"
 ssh-add ~/.ssh/id_botyglot_*
 
-echo "======> debug ssh : ssh -v git@github.com"
-ssh -v git@github.com || true
-
 ### INITIAL DEPENDECIES SETUP ###
 echo "======> sem-version ruby $NODE_VERSION -f"
 sem-version node $NODE_VERSION -f
