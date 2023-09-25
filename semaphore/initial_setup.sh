@@ -14,6 +14,8 @@ set -e
 # echo "======> "
 
 ### SSH SETUP ###
+echo "======> echo \$GIT_SSH_COMMAND"
+echo $GIT_SSH_COMMAND
 # Correct permissions since they are too open by default
 [[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && echo "======> chmod 0600 ~/.ssh/id_botyglot_*"
 [[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && chmod 0600 ~/.ssh/id_botyglot_*
