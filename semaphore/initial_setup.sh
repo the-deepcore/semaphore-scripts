@@ -18,8 +18,8 @@ set -e
 [[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && echo "======> chmod 0600 ~/.ssh/id_botyglot_*"
 [[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && chmod 0600 ~/.ssh/id_botyglot_*
 # Add the key to the ssh agent:
-[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && echo "======> ssh-add ~/.ssh/id_botyglot_*"
-[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && ssh-add ~/.ssh/id_botyglot_*
+#[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && echo "======> ssh-add ~/.ssh/id_botyglot_*"
+#[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && ssh-add ~/.ssh/id_botyglot_*
 
 echo "======> debug ssh : ssh -v git@github.com"
 ssh -v git@github.com || true
