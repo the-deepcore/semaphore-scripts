@@ -17,11 +17,11 @@ set -e
 echo "======> echo \$GIT_SSH_COMMAND"
 echo $GIT_SSH_COMMAND
 # Correct permissions since they are too open by default
-[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && echo "======> chmod 0600 ~/.ssh/id_botyglot_*"
-[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && chmod 0600 ~/.ssh/id_botyglot_*
+echo "======> chmod 0600 ~/.ssh/id_botyglot_*"
+chmod 0600 ~/.ssh/id_botyglot_*
 # Add the key to the ssh agent:
-[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && echo "======> ssh-add ~/.ssh/id_botyglot_*"
-[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && ssh-add ~/.ssh/id_botyglot_*
+echo "======> ssh-add ~/.ssh/id_botyglot_*"
+ssh-add ~/.ssh/id_botyglot_*
 
 echo "======> debug ssh : ssh -v git@github.com"
 ssh -v git@github.com || true
