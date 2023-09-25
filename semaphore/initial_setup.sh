@@ -21,6 +21,9 @@ set -e
 [[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && echo "======> ssh-add ~/.ssh/id_botyglot_*"
 [[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && ssh-add ~/.ssh/id_botyglot_*
 
+echo "======> debug ssh : ssh -v git@github.com"
+ssh -v git@github.com || true
+
 ### INITIAL DEPENDECIES SETUP ###
 echo "======> sem-version ruby $NODE_VERSION -f"
 sem-version node $NODE_VERSION -f
