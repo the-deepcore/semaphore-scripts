@@ -16,7 +16,7 @@ set -e
 ### SSH SETUP ###
 # Correct permissions since they are too open by default
 [[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && echo "======> chmod 0600 ~/.ssh/botyglot-*"
-[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && chmod 0600 ~/.ssh/*
+[[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && chmod 0600 ~/.ssh/botyglot-*
 # Add the key to the ssh agent:
 [[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && echo "======> ssh-add ~/.ssh/botyglot-*"
 [[ -v BOTYGLOT_USE_CUSTOM_SSH_KEYS ]] && ssh-add ~/.ssh/botyglot-*
