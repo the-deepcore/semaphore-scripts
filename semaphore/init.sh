@@ -11,5 +11,3 @@ rbenv rehash
 checkout --use-cache
 sem-service start postgres 15
 sem-service start redis 7
-
-exit 0
