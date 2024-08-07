@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-sem-version node $NODE_VERSION -f
-sem-version ruby $RUBY_VERSION -f
+sem-version node 16.20.2
+sem-version ruby 3.2.0
 
-gem install bundler -v '2.3.7' --no-document
+gem install bundler -v '2.3.7'
 bundle config set path 'vendor/bundle'
 rbenv rehash
 
