@@ -13,6 +13,8 @@ DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:drop RAILS_ENV=develop
 
 DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:create RAILS_ENV=development
 
+DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:schema:load RAILS_ENV=development
+
 DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:migrate db:seed RAILS_ENV=development
 
 bundle exec rails assets:precompile
