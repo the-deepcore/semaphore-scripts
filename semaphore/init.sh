@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-sem-version node 14.21.3
-sem-version ruby 3.2.0
+sem-version node $NODE_VERSION
+sem-version ruby $RUBY_VERSION
 
-gem install bundler -v '2.3.7' --no-document
+gem install bundler -v $BUNDLER_VERSION --no-document
 
-gem update --system 3.5.17
+gem update --system $RUBYGEMS_VERSION
 
 checkout --use-cache
 
